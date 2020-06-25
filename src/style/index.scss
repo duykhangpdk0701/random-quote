@@ -57,6 +57,7 @@ body {
     cursor: pointer;
     outline: none;
     display: grid;
+    transition: all 1s ease;
   }
 
   .share-btns {
@@ -72,6 +73,7 @@ body {
       align-items: center;
       color: white;
       cursor: pointer;
+      transition: all 1s ease;
     }
 
     .fa-twitter,
@@ -85,6 +87,6 @@ body {
   }
 
   .new-quote-btn {
-    padding: 0px 15px;
+    padding: 11px 15px;
   }
 }

@@ -68,6 +68,10 @@ body {
   height: 40px;
   cursor: pointer;
   outline: none;
+  display: -ms-grid;
+  display: grid;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .button-container .share-btns {
@@ -92,6 +96,8 @@ body {
           align-items: center;
   color: white;
   cursor: pointer;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .button-container .share-btns .fa-twitter,
@@ -104,6 +110,6 @@ body {
 }
 
 .button-container .new-quote-btn {
-  padding: 0px 15px;
+  padding: 11px 15px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSpring, animated } from "react-spring";
 
 const colors = [
   "#00a8ff",
@@ -66,18 +67,35 @@ export default class QuoteBox extends React.Component {
       });
     };
 
+    const background = {
+      backgroundColor: colors[this.state.choice],
+    };
+
+    const color = {
+      color: colors[this.state.choice],
+    };
+
+    const animateText = useSpring({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+    });
+
     return (
       <div id="quote-box">
-        <div id="text">
+        <animated.div
+          id="text"
+          style={(color, { opacity: animateText.opacity })}
+        >
           <i class="fas fa-quote-left comma"></i>
           <span>{quote[this.state.choice]}</span>
-        </div>
+        </animated.div>
         <div id="author">
           <span>{"--" + author[this.state.choice] + "--"}</span>
         </div>
         <div className="button-container">
           <div className="share-btns">
             <a
+              style={background}
               href={TweetURL}
               id="tweet-quote"
               className="tweet-btn"
@@ -85,11 +103,16 @@ export default class QuoteBox extends React.Component {
             >
               <i class="fab fa-twitter"></i>
             </a>
-            <a href="" className="tumblr-btn">
+            <a style={background} href="" className="tumblr-btn">
               <i class="fab fa-tumblr"></i>
             </a>
           </div>
-          <button className="new-quote-btn" id="new-quote" onClick={change}>
+          <button
+            style={background}
+            className="new-quote-btn"
+            id="new-quote"
+            onClick={change}
+          >
             New Quote
           </button>
         </div>
