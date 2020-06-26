@@ -1,11 +1,14 @@
 import React from "react";
-import QuoteBox from "./quoteBox";
+import Quote from "./QuoteApp";
+import { QuoteProvider } from "./QuoteProvider";
 
 function App() {
   return (
-    <div className="app">
-      <QuoteBox />
-    </div>
+    <QuoteProvider>
+      <div className="app">
+        <Quote />
+      </div>
+    </QuoteProvider>
   );
 }
 

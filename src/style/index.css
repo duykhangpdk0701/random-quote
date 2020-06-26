@@ -110,6 +110,7 @@ body {
 }
 
 .button-container .new-quote-btn {
-  padding: 11px 15px;
+  padding: 0px 12px;
+  place-content: center;
 }
 /*# sourceMappingURL=index.css.map */
